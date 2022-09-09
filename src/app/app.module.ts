@@ -10,12 +10,10 @@ import { PromptComponent } from './prompt/prompt.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule} from '@angular/material/input';
 import { ReplyComponent } from './reply/reply.component';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
 import { MatTableModule } from '@angular/material/table';
 import { BasicTableComponent } from './basic-table/basic-table.component'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,10 +39,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     MatTableModule,
     BrowserAnimationsModule,
-    
-    /* HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ) */
   ],
   providers: [],
   bootstrap: [AppComponent]

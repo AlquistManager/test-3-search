@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Snippet } from '../snippet';
+/* import { Snippet } from '../snippet'; */
 import { SnippetService } from '../snippet.service';
 
 @Component({
@@ -10,16 +10,16 @@ import { SnippetService } from '../snippet.service';
 })
 export class ReplyComponent implements OnInit {
   
-  snippets: Observable<Snippet[]> | undefined ;
+/*   snippets: Observable<Snippet[]> | undefined ;
   
   constructor( private snippetService: SnippetService ) { }
 
   @Input()
   search : string = '';
-
+ */
   ngOnInit(): void {
-    console.log ("ngOnInit reply: ", this.search);
-   /*  this.snippets = this.snippetService.getSnippets() */
+   /*   console.log ("ngOnInit reply: ", this.search);
+   this.snippets = this.snippetService.getSnippets() */
   }  
 
 }

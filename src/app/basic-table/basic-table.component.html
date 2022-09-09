@@ -1,45 +1,13 @@
  <!-- <p>app-basic-table works!</p> -->
-<mat-table [dataSource]="snippets" class="mat-elevation-z8" style = "margin-top : 2%" >
-  <!-- Position Column 
-  <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef> Id</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
-  </ng-container>-->
+<mat-table [dataSource]="snippets" class="mat-elevation-z2" style = "margin-top : 2%" >
 
   <!-- Position Column -->
-  <ng-container matColumnDef="answer">
-    <mat-header-cell *matHeaderCellDef [ngClass]="'w-20'"> Answer</mat-header-cell>
-    <mat-cell *matCellDef="let element" [ngClass]="'w-20'"> {{element.answer}} </mat-cell>
-  </ng-container>
-
-  <!-- Weight Column -->
-  <ng-container matColumnDef="intent">
-      <mat-header-cell *matHeaderCellDef [ngClass]="'w-50'"> Intent </mat-header-cell>
-      <mat-cell *matCellDef="let element" [ngClass]="'w-50'"> {{element.intent}} </mat-cell>
-  </ng-container>
-  
-  <!-- Name Column -->
-  <ng-container matColumnDef="country">
-      <mat-header-cell *matHeaderCellDef [ngClass]="'w-20'"> Country </mat-header-cell>
-      <mat-cell *matCellDef="let element" [ngClass]="'w-20'"> {{element.country}} </mat-cell>
-  </ng-container>
-    
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="year">
-        <mat-header-cell *matHeaderCellDef [ngClass]="'w-10'"> Year </mat-header-cell>
-        <mat-cell *matCellDef="let element" [ngClass]="'w-10'"> {{element.year}} </mat-cell>
+  <ng-container matColumnDef="results">
+    <mat-header-cell *matHeaderCellDef > Results</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element}} </mat-cell>
   </ng-container>
     
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
   
-  <!-- Copyright 2022 Google LLC. All Rights Reserved.
-      Use of this source code is governed by an MIT-style license that
-      can be found in the LICENSE file at https://angular.io/license 
-
-answer	:	59555439
-intent	:	Population, total
-country	:	France
-year	:	1995
- -->

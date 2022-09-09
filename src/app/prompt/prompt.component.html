@@ -1,25 +1,21 @@
-<div class="mat-elevation-z8" style = "margin-top : 2%">
+<div class="mat-elevation-z2" style = "margin-top : 2%">
   <mat-form-field style = "width:100%; margin-bottom : 2%" appearance="fill" >
-    <mat-label for="name">Question</mat-label>
-    <input matInput #message maxlength="64" placeholder="Ex. I need help with..." id="name" type="text" [formControl]="name">
+    <mat-label for="name">Sentence</mat-label>
+    <input matInput #message maxlength="256" placeholder="Ex. I need help with..." id="name" type="text" [formControl]="name">
   
    <!--  <input type="text" [(ngModel)]="employeeDetails.name" class="form-control" placeholder="Name"> -->
 
-    <mat-hint align="start"><strong>Ask series expression, country, year</strong> </mat-hint>
-    <mat-hint align="end">{{message.value.length}} / 64</mat-hint>
+    <mat-hint align="start"><strong>Enter a sentence and paraphrase</strong> </mat-hint>
+    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
   </mat-form-field>
   <div style = "display: flex; justify-content : center; padding: 3%; margin-top : 2%">
-  <button type="button" (click)="search()" mat-raised-button color="primary">Search</button>
+  <button type="button" (click)="search()" mat-raised-button color="primary">Generate</button>
   </div>
 </div>
 
+<div *ngIf="searchPrompt">  
+  <app-basic-table search = {{searchPrompt}}></app-basic-table>
+</div>
   
-   <!-- <h2>The value is: {{name.value}} id: {{name.value}}</h2> -->
-    <div *ngIf="searchPrompt">  
-     <!-- <h2>The final is: {{searchPrompt}} </h2> -->
-      <app-reply search = {{searchPrompt}}></app-reply>
-      <app-basic-table search = {{searchPrompt}}></app-basic-table>
-    </div>
-  
-  <mat-divider></mat-divider>
+<mat-divider></mat-divider>
      
