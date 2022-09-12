@@ -26,7 +26,10 @@ export class SnippetService {
     var body = {
       text : search,
       paraphrases_num : 5,
-      diverse : "True"
+      diverse : "True",
+      top_k: 80,
+      top_p: 0.92,
+      temperature: 1.6
     }
 
     console.log ("snippet-sevice post: ", search);
