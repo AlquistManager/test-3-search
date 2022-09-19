@@ -9,12 +9,14 @@
   }
 
   .main-div{
-    height: 100vh;
+    /* height: 100vh; */
     /* display: flex; */
-    margin-right : 20%;
-    margin-left : 20%;
+    margin : auto;
+    min-width: 250px;
+    max-width: 690px;
     margin-top : 2%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: lightgray;
   }

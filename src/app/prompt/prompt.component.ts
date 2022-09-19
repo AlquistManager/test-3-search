@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, NgModel } from '@angular/forms';
+import { MatInputModule} from '@angular/material/input';
+import { Body } from '../snippet';
 
 @Component({
   selector: 'app-prompt',
@@ -13,11 +15,15 @@ export class PromptComponent implements OnInit {
   ngOnInit(): void {
   }
   name = new FormControl(''); 
-  searchPrompt : string |null = "";
+  searchPrompt : string |null = ""; 
+  
+  sent : number | null | undefined = 10;
+  topK : number | null | undefined = 80;
+  topP : number | null | undefined = 0.92;
+  temp : number | null | undefined = 1.6;
 
   search() {
     this.searchPrompt = this.name.value;
-    console.log ("prompt search: ", this.searchPrompt);
   }
 
 }

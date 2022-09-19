@@ -1,2 +1,36 @@
-<h2>form works!</h2>
-<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+
+<mat-card-content>
+
+  <label style = "margin :5%">Top_k</label>
+  <mat-slider min="1" max="100" step="1" 
+    [(value)]= "topK"
+    aria-labelledby="example-name-label"
+  >
+  </mat-slider>
+  <label class="example-value-label">{{topK}}</label>    
+
+  <label style = "margin :5%">Top_p</label>
+  <mat-slider min="1" max="100" step="1" 
+    [(value)]= "topP"
+    aria-labelledby="example-name-label"
+  >
+  </mat-slider>
+  <label class="example-value-label">{{topP}}</label>   
+
+<label style = "margin :5%">Temperature</label>
+  <mat-slider min="1" max="100" step="1" 
+    [(value)]= "temp"
+    aria-labelledby="example-name-label"
+>
+</mat-slider>
+<label class="example-value-label">{{temp}}</label>   
+
+<label style = "margin :5%">Sentences</label>
+  <mat-slider min="1" max="100" step="1" 
+    [(value)]= "sent"
+    aria-labelledby="example-name-label"
+>
+</mat-slider>
+<label class="example-value-label">{{sent}}</label>    
+
+</mat-card-content>
