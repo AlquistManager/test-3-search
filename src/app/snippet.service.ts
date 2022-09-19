@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RetSnippet } from './snippet';
+import { RetSnippet, Body } from './snippet';
 /* import { SNIPPETS, } from './mock-snippets'; */
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -20,10 +20,11 @@ export class SnippetService {
     console.log ("get: no param ");
     return this.http.get<RetSnippet[]>(this.snippetUrl)
   }
-  wxit :  Observable<RetSnippet> | undefined;
+  /* wxit :  Observable<RetSnippet> | undefined; */
   /** POST: add a new hero to the server */
-  postQuestion (search : string ): Observable<RetSnippet> {
-    var body = {
+  /* postQuestion (search : string ): Observable<RetSnippet> {
+    
+    var body := {
       text : search,
       paraphrases_num : 5,
       diverse : "True",
@@ -33,6 +34,12 @@ export class SnippetService {
     }
 
     console.log ("snippet-sevice post: ", search);
+
+    return this.http.post<RetSnippet>(this.snippetUrl, body, this.httpOptions) 
+  }  */ 
+
+  postQuestion1 (body : Body ): Observable<RetSnippet> { 
+    /* console.log ("snippet-sevice post: ", search); */
 
     return this.http.post<RetSnippet>(this.snippetUrl, body, this.httpOptions) 
   }  

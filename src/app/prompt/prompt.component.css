@@ -7,3 +7,12 @@
   .example-full-width {
     margin : auto
   }
+
+  .slider-form {
+    width: 80%;
+  }
+
+  .slider-label-form {
+    min-width: 90px;
+    display: inline-block;
+  }

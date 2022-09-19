@@ -1,21 +1,83 @@
-<div class="mat-elevation-z2" style = "margin-top : 2%">
+<mat-card class="mat-elevation-z2" style = "margin : 2% 0% 2% 0%;">
   <mat-form-field style = "width:100%; margin-bottom : 2%" appearance="fill" >
-    <mat-label for="name">Sentence</mat-label>
-    <input matInput #message maxlength="256" placeholder="Ex. I need help with..." id="name" type="text" [formControl]="name">
-  
-   <!--  <input type="text" [(ngModel)]="employeeDetails.name" class="form-control" placeholder="Name"> -->
+    <!-- <mat-label for="name"></mat-label> -->
+    <input matInput 
+      #message maxlength="256" 
+      placeholder="Ex. I need help with..." 
+      id="name" 
+      type="text" 
+      [formControl]="name" 
+      (keyup.enter)="search()"
+    >
 
-    <mat-hint align="start"><strong>Enter a sentence and paraphrase</strong> </mat-hint>
+    <mat-hint align="start"><strong>Enter a sentence and press enter</strong> </mat-hint>
     <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+    <!-- <button matSuffix mat-icon-button (click)="search()" >
+      <mat-icon>play_arrow</mat-icon>
+    </button> -->
+    <button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name.setValue (null)">
+      <mat-icon>close</mat-icon>
+    </button> 
   </mat-form-field>
-  <div style = "display: flex; justify-content : center; padding: 3%; margin-top : 2%">
+ <!--  <div style = "display: flex; justify-content : center; padding: 3%; margin-top : 2%">
   <button type="button" (click)="search()" mat-raised-button color="primary">Generate</button>
-  </div>
-</div>
+  </div> -->
+</mat-card>
 
 <div *ngIf="searchPrompt">  
-  <app-basic-table search = {{searchPrompt}}></app-basic-table>
+  <app-basic-table 
+    [search] ="searchPrompt" 
+    [sentences]="sent" 
+    [topK]="topK" 
+    [topP]="topP" 
+    [temp]="temp" 
+  ></app-basic-table>
+  <!-- <app-basic-table search = {{searchPrompt}}></app-basic-table> -->
 </div>
-  
+
+<mat-card>
+  <label class="slider-label-form">Sentences</label>
+  <mat-slider class="slider-form" 
+    min="1" max="20" step="1"
+    [(value)]="sent"
+    aria-labelledby="example-name-label"
+  >
+  </mat-slider>
+  <label class="example-value-label">{{sent}}</label>    
+</mat-card>  
+
+<mat-card>
+  <label class="slider-label-form">Top_k</label>
+  <mat-slider class="slider-form" 
+    min="5" max="100" step="1" 
+    [(value)]="topK"
+    aria-labelledby="example-name-label"
+  >
+  </mat-slider>
+  <label class="example-value-label">{{topK}}</label>    
+</mat-card>
+
+<mat-card>
+  <label class="slider-label-form">Top_p</label>
+  <mat-slider class="slider-form"
+    min="0.8" max="1.0" step="0.02" 
+    [(value)]="topP"
+    aria-labelledby="example-name-label"
+  >
+  </mat-slider>
+  <label class="example-value-label">{{topP}}</label>  
+</mat-card>
+
+<mat-card>
+  <span class="slider-label-form">Temperature</span>
+  <mat-slider class="slider-form"
+    min="0.8" max="3.0" step="0.01" 
+    [(value)]="temp"
+    aria-labelledby="example-name-label"
+  >
+  </mat-slider>
+  <label class="example-value-label">{{temp}}</label>
+</mat-card>
+
 <mat-divider></mat-divider>
      

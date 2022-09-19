@@ -1,9 +1,9 @@
  <!-- <p>app-basic-table works!</p> -->
-<mat-table [dataSource]="snippets" class="mat-elevation-z2" style = "margin-top : 2%" >
+<mat-table [dataSource]="snippets" class="mat-elevation-z2" style = "margin : 2% 0% 2% 0%" >
 
   <!-- Position Column -->
   <ng-container matColumnDef="results">
-    <mat-header-cell *matHeaderCellDef > Results</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef style="font-size: 24px; background-color: rgb(232, 240, 254)"> Alternate sentences</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element}} </mat-cell>
   </ng-container>
     
