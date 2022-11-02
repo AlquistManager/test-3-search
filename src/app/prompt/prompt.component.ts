@@ -14,6 +14,7 @@ export class PromptComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   name = new FormControl(''); 
   searchPrompt : string |null = ""; 
   

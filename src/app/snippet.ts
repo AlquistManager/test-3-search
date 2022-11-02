@@ -25,11 +25,7 @@ export interface Body {
   temperature: number| null | undefined
 }
 
-/* export interface Body {
-  text : string,
-  paraphrases_num : 5,
-  diverse : "True",
-  top_k: 80,
-  top_p: 0.92,
-  temperature: 1.6
-} */
+export interface BodySrc {
+  query : string | null,
+  index : string | null,
+}

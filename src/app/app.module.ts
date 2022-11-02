@@ -18,6 +18,7 @@ import { MatTableModule } from '@angular/material/table';
 import { BasicTableComponent } from './basic-table/basic-table.component'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {MatIconModule} from '@angular/material/icon';
     PromptComponent,
     ReplyComponent,
     BasicTableComponent,
+    FileUploadComponent,
   ],
   imports: [ 
     BrowserModule,
